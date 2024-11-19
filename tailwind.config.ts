@@ -11,6 +11,12 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        lamaSky: "#C3EBFA",
+        lamaSkyLight: "#edf9fd",
+        lamaPurple: "#CFCEFF",
+        lamaPurpleLight: "#cecde9",
+        lamaYellow: "#FAE27C",
+        lamaYellowLight: "#FEFCE8",
       },
     },
   },
