@@ -36,3 +36,7 @@
 .react-calendar__navigation__label__labelText {
   font-weight: 600 !important;
 }
+
+.rbc-btn-group:first-child {
+  display: none !important;
+}

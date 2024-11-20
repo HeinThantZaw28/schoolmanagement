@@ -2,7 +2,7 @@ import React from "react";
 
 import Link from "next/link";
 
-import { menuItems } from "@/constants/constantData";
+import { menuItems, role } from "@/constants/constantData";
 
 const Menu = () => {
   return (
@@ -15,16 +15,19 @@ const Menu = () => {
           >
             {item.title}
           </span>
-          {item.items.map((menu) => (
-            <Link
-              href={menu.path}
-              key={menu.path}
-              className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-lamaSkyLight"
-            >
-              {menu.icon}
-              <span className="hidden lg:block">{menu.title}</span>
-            </Link>
-          ))}
+          {item.items.map((menu) => {
+            if (menu.visible.includes(role))
+              return (
+                <Link
+                  href={menu.href}
+                  key={menu.href}
+                  className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-lamaSkyLight"
+                >
+                  {menu.icon}
+                  <span className="hidden lg:block">{menu.label}</span>
+                </Link>
+              );
+          })}
         </div>
       ))}
     </div>
